@@ -6,10 +6,10 @@
   <meta name="color-scheme" content="light only" />
   <title>Lễ Tốt Nghiệp | Nguyễn Thiên Ân</title>
 
-  <!-- Open Graph Preview cho Messenger (Dùng ảnh nghệ thuật nón cử nhân, KHÔNG dùng ảnh mặt) -->
+  <!-- Open Graph Preview cho Messenger -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Thiệp Mời Lễ Tốt Nghiệp — Nguyễn Thiên Ân" />
-  <meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng Ân tại Lễ Tốt Nghiệp" />
+  <meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng Ân tại Lễ Tốt Nghiệp — Hội trường A Cơ sở A UEH (59C Nguyễn Đình Chiểu, Q.3)." />
   <meta property="og:url" content="https://beiuthichcamhoa.github.io/graduation-invite/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&auto=format&fit=crop&q=80" />
   <meta property="og:image:width" content="1200" />
@@ -153,7 +153,7 @@
             Lễ Tốt Nghiệp
           </h1>
 
-          <!-- KHUNG ẢNH CHÂN DUNG CỦA BẠN (TRẢ LẠI ẢNH AVATAR.JPG) -->
+          <!-- KHUNG ẢNH CHÂN DUNG CỦA BẠN -->
           <div class="relative w-40 h-52 sm:w-44 sm:h-56 mx-auto mb-4 rounded-2xl p-1.5 bg-gradient-to-b from-[#e8d7ab] to-[#c7af76] shadow-[0_12px_28px_rgba(140,115,62,0.18)] group">
             <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/80 bg-white">
               <img 
@@ -218,7 +218,7 @@
         </a>
       </div>
 
-      <!-- ================= CỘT 2: CÂY LỜI CHÚC (ĐƯỢC KÉO CAO BẰNG THIỆP) ================= -->
+      <!-- ================= CỘT 2: CÂY LỜI CHÚC ================= -->
       <div class="w-full flex flex-col justify-between h-full bg-[#fffdfa] border border-[#ebdcb9] rounded-2xl p-6 sm:p-8 shadow-[0_15px_35px_rgba(140,115,62,0.08)]">
         
         <div>
@@ -237,7 +237,7 @@
             </span>
           </div>
 
-          <!-- Canvas Cây mở rộng chiều cao cân xứng -->
+          <!-- Canvas Cây -->
           <div class="relative w-full h-[360px] sm:h-[400px] rounded-xl bg-[#faf6ee] border border-[#ebdcb9] overflow-hidden flex items-center justify-center">
             <canvas id="techTree" class="w-full h-full cursor-pointer"></canvas>
             
@@ -422,7 +422,8 @@
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle) * 0.78;
         
-        activeNodes.push({ x, y, r: 5.5, data: wish, colorIndex: i % 2 });
+        // Phân bổ 5 màu luân phiên cho tán lá
+        activeNodes.push({ x, y, r: 5.5, data: wish, colorIndex: i % 5 });
       });
     }
 
@@ -433,20 +434,28 @@
 
       drawBranch(w / 2, h - 15, h * 0.28, 0, 6.5);
 
+      // BẢNG MÀU LÁ BOTANICAL ĐA SẮC ĐỘ
+      const leafPalettes = [
+        { main: "#059669", glow: "rgba(5, 150, 105, 0.25)" },  // Xanh Ngọc Bích
+        { main: "#bfa15f", glow: "rgba(191, 161, 95, 0.25)" }, // Vàng Champagne
+        { main: "#10b981", glow: "rgba(16, 185, 129, 0.25)" }, // Xanh Bạc Hà tươi
+        { main: "#047857", glow: "rgba(4, 120, 87, 0.25)" },   // Xanh Ngọc Thẫm
+        { main: "#65a30d", glow: "rgba(101, 163, 13, 0.25)" }  // Xanh Lộc Non
+      ];
+
+      // Render từng chiếc lá phát sáng đa sắc
       activeNodes.forEach(node => {
-        const isGold = node.colorIndex === 0;
-        const mainColor = isGold ? "#bfa15f" : "#059669";
-        const glowColor = isGold ? "rgba(191, 161, 95, 0.25)" : "rgba(5, 150, 105, 0.2)";
+        const palette = leafPalettes[node.colorIndex % leafPalettes.length];
 
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r + 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = glowColor;
+        ctx.fillStyle = palette.glow;
         ctx.fill();
 
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-        ctx.fillStyle = mainColor;
-        ctx.shadowColor = mainColor;
+        ctx.fillStyle = palette.main;
+        ctx.shadowColor = palette.main;
         ctx.shadowBlur = 6;
         ctx.fill();
         ctx.shadowBlur = 0;
