@@ -8,68 +8,82 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Cormorant Garamond (Serif Thiệp Sang Trọng), Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Playfair Display, Alex Brush (Chữ ký/Viết tay thanh lịch), Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
+    :root {
+      --bg-cream: #fbf7ee;
+      --card-cream: #fffdf9;
+      --gold-primary: #bfa15f;
+      --gold-dark: #8c733e;
+      --gold-light: #e8d7ab;
+      --text-dark: #292524;
+      --text-muted: #78716c;
+    }
+
     body {
-      background-color: #06090e;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #cbd5e1;
+      background-color: var(--bg-cream);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      /* Vân nền kem lụa ấm áp */
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 85% 80%, rgba(217, 119, 6, 0.07) 0%, transparent 45%),
-        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+        radial-gradient(circle at 10% 15%, rgba(232, 215, 171, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 90% 85%, rgba(217, 180, 110, 0.25) 0%, transparent 50%),
+        linear-gradient(to right, rgba(191, 161, 95, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(191, 161, 95, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
     }
 
     .font-serif-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
     }
-    .font-code {
-      font-family: 'JetBrains Mono', monospace;
+    .font-script {
+      font-family: 'Alex Brush', cursive;
     }
 
-    /* Khung thiệp vật lý cao cấp */
-    .invitation-card {
-      background: linear-gradient(160deg, rgba(17, 24, 39, 0.9) 0%, rgba(7, 12, 22, 0.96) 100%);
-      border: 1px solid rgba(212, 175, 55, 0.38);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.08);
+    /* Thẻ thiệp mời cao cấp nền kem */
+    .cream-card {
+      background: var(--card-cream);
+      border: 1px solid rgba(191, 161, 95, 0.45);
+      box-shadow: 
+        0 20px 40px -15px rgba(140, 115, 62, 0.12),
+        0 0 0 6px rgba(255, 253, 249, 0.8),
+        0 0 0 7px rgba(191, 161, 95, 0.25);
       position: relative;
     }
 
-    /* Hoa văn viền góc thiệp */
+    /* Hoa văn viền góc thiệp cổ điển */
     .corner-decor {
       position: absolute;
-      width: 16px;
-      height: 16px;
-      border-color: #d4af37;
+      width: 18px;
+      height: 18px;
+      border-color: var(--gold-primary);
     }
-    .corner-tl { top: 10px; left: 10px; border-top: 1.5px solid; border-left: 1.5px solid; }
-    .corner-tr { top: 10px; right: 10px; border-top: 1.5px solid; border-right: 1.5px solid; }
-    .corner-bl { bottom: 10px; left: 10px; border-bottom: 1.5px solid; border-left: 1.5px solid; }
-    .corner-br { bottom: 10px; right: 10px; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+    .corner-tl { top: 12px; left: 12px; border-top: 1.5px solid; border-left: 1.5px solid; }
+    .corner-tr { top: 12px; right: 12px; border-top: 1.5px solid; border-right: 1.5px solid; }
+    .corner-bl { bottom: 12px; left: 12px; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+    .corner-br { bottom: 12px; right: 12px; border-bottom: 1.5px solid; border-right: 1.5px solid; }
 
-    /* Tooltip */
+    /* Tooltip xem lời chúc */
     #tooltip {
       position: absolute;
       display: none;
       pointer-events: none;
       z-index: 50;
-      background: rgba(10, 15, 26, 0.94);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(52, 211, 153, 0.4);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 12px 16px;
+      background: rgba(255, 253, 249, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 10px 25px -5px rgba(140, 115, 62, 0.25);
+      border-radius: 8px;
+      padding: 10px 14px;
       min-width: 170px;
-      max-width: 270px;
+      max-width: 260px;
       transform: translate(-50%, -125%);
       transition: opacity 0.2s ease, transform 0.2s ease;
       opacity: 0;
@@ -79,140 +93,143 @@
       transform: translate(-50%, -135%);
     }
 
-    /* Custom Input */
-    .wish-input {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #f8fafc;
+    /* Input tùy chỉnh phong cách trang nhã */
+    .cream-input {
+      background: #fdfbf7;
+      border: 1px solid #e7dfcf;
+      color: #292524;
       transition: all 0.25s ease;
     }
-    .wish-input:focus {
+    .cream-input:focus {
       outline: none;
-      border-color: #34d399;
-      box-shadow: 0 0 12px rgba(52, 211, 153, 0.25);
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(191, 161, 95, 0.15);
+      background: #ffffff;
     }
   </style>
 </head>
 
 <body class="min-h-screen flex flex-col lg:flex-row items-center justify-center p-4 md:p-8 lg:p-12 gap-8 lg:gap-12">
 
-  <!-- ================= CỘT 1: THIỆP MỜI TỐT NGHIỆP TRANG TRỌNG ================= -->
+  <!-- ================= CỘT 1: THIỆP MỜI SANG TRỌNG NỀN VÀNG KEM ================= -->
   <div class="w-full lg:w-1/2 max-w-xl">
-    <div class="invitation-card rounded-2xl p-6 sm:p-10 text-center relative overflow-hidden backdrop-blur-xl">
+    <div class="cream-card rounded-2xl p-6 sm:p-10 text-center relative">
       
-      <!-- Họa tiết góc thiệp -->
+      <!-- Họa tiết 4 góc -->
       <div class="corner-decor corner-tl"></div>
       <div class="corner-decor corner-tr"></div>
       <div class="corner-decor corner-bl"></div>
       <div class="corner-decor corner-br"></div>
 
-      <!-- Header Thiệp -->
+      <!-- Lời mở đầu -->
       <div class="mb-3">
-        <span class="font-code tracking-[0.25em] text-[11px] uppercase text-emerald-400 font-medium">
-          — Official Invitation —
+        <span class="tracking-[0.3em] text-[11px] uppercase text-[#8c733e] font-semibold">
+          — Graduation Invitation —
         </span>
-        <h2 class="text-xs uppercase tracking-widest text-amber-200/90 mt-1 font-semibold">
-          Trân Trọng Kính Mời
-        </h2>
+        <p class="text-xs uppercase tracking-[0.2em] text-[#a89260] mt-1 font-medium">
+          Trân trọng kính mời
+        </p>
       </div>
 
-      <!-- Tiêu đề lớn -->
-      <h1 class="font-serif-title text-4xl sm:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-200 to-amber-400 mb-6 drop-shadow-sm">
-        Graduation Ceremony
+      <!-- Tiêu đề Thiệp -->
+      <h1 class="font-serif-title text-3xl sm:text-5xl font-bold tracking-wide text-[#3a2e1d] mb-5">
+        Lễ Tốt Nghiệp
       </h1>
 
-      <!-- KHUNG ẢNH CHÂN DUNG LỚN & NỔI BẬT -->
-      <div class="relative w-44 h-56 sm:w-52 sm:h-64 mx-auto mb-6 rounded-2xl p-1.5 bg-gradient-to-b from-amber-300/40 via-emerald-400/25 to-transparent shadow-[0_12px_32px_rgba(0,0,0,0.6)] group">
-        <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/10">
+      <!-- KHUNG ẢNH CHÂN DUNG LỚN & THANH LỊCH -->
+      <div class="relative w-44 h-56 sm:w-52 sm:h-64 mx-auto mb-6 rounded-2xl p-1.5 bg-gradient-to-b from-[#e8d7ab] to-[#c7af76] shadow-[0_12px_30px_rgba(140,115,62,0.18)] group">
+        <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/60 bg-white">
           <img 
             src="./avatar.jpg" 
             alt="Nguyễn Thiên Ân" 
             class="w-full h-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
             onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80'"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/30 via-transparent to-transparent"></div>
           
-          <span class="absolute bottom-2.5 left-1/2 -translate-x-1/2 font-code text-[10px] tracking-wider px-2.5 py-0.5 rounded-full bg-black/80 border border-amber-300/40 text-amber-200 backdrop-blur-md">
+          <span class="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-[10px] tracking-widest px-3 py-0.5 rounded-full bg-stone-900/80 border border-amber-200/40 text-[#fbf7ee] backdrop-blur-sm">
             CLASS OF 2026
           </span>
         </div>
       </div>
 
-      <!-- Tên Cử nhân & Khoa ngành -->
+      <!-- Tên Cử nhân cách điệu -->
       <div class="mb-6">
-        <h3 class="font-serif-title text-2xl sm:text-3xl font-semibold text-white tracking-wide">
+        <p class="font-script text-4xl sm:text-5xl text-[#8c733e] leading-none mb-1">
           Nguyễn Thiên Ân
-        </h3>
-        <p class="text-xs sm:text-sm text-emerald-400 font-medium tracking-wide mt-1">
+        </p>
+        <p class="text-xs sm:text-sm font-semibold tracking-wider text-stone-700 uppercase mt-2">
           Cử nhân Công nghệ & Đổi mới sáng tạo
         </p>
-        <p class="text-xs text-slate-400">Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)</p>
+        <p class="text-xs text-stone-500 font-light mt-0.5 tracking-wide">
+          Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)
+        </p>
       </div>
 
-      <!-- Khung thông tin Lễ tốt nghiệp -->
-      <div class="bg-slate-900/60 rounded-xl p-4 sm:p-5 border border-slate-800 text-left space-y-3 mb-6">
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400 text-sm">
+      <!-- Khung thông tin Thời gian & Địa điểm -->
+      <div class="bg-[#f7f2e7] rounded-xl p-4 sm:p-5 border border-[#e8ddc8] text-left space-y-3.5 mb-6 shadow-sm">
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-sm">
             <i class="fa-regular fa-clock"></i>
           </div>
           <div>
-            <div class="text-[11px] font-code uppercase text-slate-400">Thời gian diễn ra</div>
-            <div class="text-xs sm:text-sm font-semibold text-slate-100">08:00 AM — Thứ Bảy, Ngày 15/10/2026</div>
+            <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Thời gian tổ chức</div>
+            <div class="text-xs sm:text-sm font-semibold text-stone-800">08:00 AM — Thứ Bảy, Ngày 15/10/2026</div>
           </div>
         </div>
 
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 text-amber-400 text-sm">
+        <div class="flex items-start gap-3.5">
+          <div class="w-8 h-8 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-sm">
             <i class="fa-solid fa-location-dot"></i>
           </div>
           <div>
-            <div class="text-[11px] font-code uppercase text-slate-400">Địa điểm tổ chức</div>
-            <div class="text-xs sm:text-sm font-semibold text-slate-100">Hội trường A — Cơ sở A UEH</div>
-            <div class="text-xs text-slate-400">59C Nguyễn Đình Chiểu, Phường Võ Thị Sáu, Quận 3, TP.HCM</div>
+            <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Địa điểm diễn ra</div>
+            <div class="text-xs sm:text-sm font-semibold text-stone-800">Hội trường A — Cơ sở A UEH</div>
+            <div class="text-xs text-stone-600 font-light">59C Nguyễn Đình Chiểu, Phường Võ Thị Sáu, Quận 3, TP.HCM</div>
           </div>
         </div>
       </div>
 
-      <!-- Nút định vị Google Maps chuẩn địa điểm Hội trường A UEH 59C -->
+      <!-- Nút Google Maps -->
       <a 
         href="https://www.google.com/maps/dir/?api=1&destination=Trường+Đại+học+Kinh+tế+TP.HCM+-+Cơ+sở+A,+59C+Nguyễn+Đình+Chiểu,+Phường+Võ+Thị+Sáu,+Quận+3,+Hồ+Chí+Minh" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-semibold text-xs transition duration-300 shadow-[0_4px_20px_rgba(16,185,129,0.3)]">
-        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ Đường Đến Hội Trường A (Google Maps)
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#8c733e] hover:bg-[#735e31] text-white font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg">
+        <i class="fa-solid fa-diamond-turn-right text-amber-200"></i> Chỉ Đường Đến Hội Trường A (Google Maps)
       </a>
 
     </div>
   </div>
 
-  <!-- ================= CỘT 2: CÂY LỜI CHÚC TƯƠNG TÁC ================= -->
-  <div class="w-full lg:w-1/2 max-w-xl flex flex-col justify-between h-full bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+  <!-- ================= CỘT 2: CÂY LỜI CHÚC TƯƠNG TÁC (BOTANICAL CHIC) ================= -->
+  <div class="w-full lg:w-1/2 max-w-xl flex flex-col justify-between h-full bg-[#fffdfa] border border-[#ebdcb9] rounded-2xl p-6 sm:p-8 shadow-[0_15px_35px_rgba(140,115,62,0.08)]">
     
-    <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+    <div class="flex items-center justify-between mb-4 border-b border-[#ebdcb9]/60 pb-3">
       <div>
-        <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-seedling text-emerald-400"></i> Cây Lời Chúc (Wishing Tree)
+        <h2 class="font-serif-title text-lg sm:text-xl font-semibold text-stone-800 flex items-center gap-2">
+          <i class="fa-solid fa-leaf text-[#8c733e]"></i> Cây Lời Chúc (Wishing Tree)
         </h2>
-        <p class="text-xs text-slate-400 mt-0.5">Chạm vào từng lá để xem lời chúc bạn bè để lại</p>
+        <p class="text-xs text-stone-500 font-light mt-0.5">Chạm vào từng chiếc lá để đọc những lời chúc gửi đến Ân</p>
       </div>
-      <span id="nodeCount" class="font-code text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full">
+      <span id="nodeCount" class="text-xs font-medium bg-[#f5eddc] text-[#8c733e] border border-[#e2d0ab] px-3 py-1 rounded-full">
         0 lời chúc
       </span>
     </div>
 
-    <!-- Canvas Container -->
-    <div class="relative w-full h-[360px] sm:h-[420px] rounded-xl bg-black/50 border border-slate-800/60 overflow-hidden flex items-center justify-center">
+    <!-- Canvas Cây -->
+    <div class="relative w-full h-[360px] sm:h-[420px] rounded-xl bg-[#faf6ee] border border-[#ebdcb9] overflow-hidden flex items-center justify-center">
       <canvas id="techTree" class="w-full h-full cursor-pointer"></canvas>
       
       <!-- Tooltip xem lời chúc -->
       <div id="tooltip">
-        <div id="tooltipSender" class="font-semibold text-xs text-amber-300 border-b border-slate-700/80 pb-1 flex items-center gap-1.5"></div>
-        <div id="tooltipMsg" class="text-xs text-slate-200 mt-1.5 leading-relaxed"></div>
+        <div id="tooltipSender" class="font-semibold text-xs text-[#8c733e] border-b border-[#e8ddc8] pb-1 flex items-center gap-1.5"></div>
+        <div id="tooltipMsg" class="text-xs text-stone-700 mt-1.5 leading-relaxed font-light"></div>
       </div>
     </div>
 
     <!-- Form Gửi Lời Chúc -->
-    <form id="wishForm" class="mt-4 bg-black/40 p-4 rounded-xl border border-slate-800 space-y-3">
+    <form id="wishForm" class="mt-4 bg-[#fbf7ef] p-4 rounded-xl border border-[#ebdcb9] space-y-3">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
         <input 
           id="senderInput" 
@@ -220,7 +237,7 @@
           placeholder="Tên của bạn..." 
           required 
           autocomplete="off"
-          class="wish-input px-3 py-2 rounded-lg text-xs"
+          class="cream-input px-3 py-2 rounded-lg text-xs"
         />
         <input 
           id="msgInput" 
@@ -228,13 +245,13 @@
           placeholder="Gửi lời chúc tốt nghiệp..." 
           required 
           autocomplete="off"
-          class="wish-input sm:col-span-2 px-3 py-2 rounded-lg text-xs"
+          class="cream-input sm:col-span-2 px-3 py-2 rounded-lg text-xs"
         />
       </div>
       <button 
         type="submit" 
-        class="w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500 text-xs font-semibold tracking-wide transition flex items-center justify-center gap-2">
-        <i class="fa-solid fa-leaf"></i> Treo Lời Chúc Lên Cây
+        class="w-full py-2.5 rounded-lg bg-[#8c733e] hover:bg-[#735e31] text-white text-xs font-medium tracking-wide uppercase transition shadow-sm hover:shadow flex items-center justify-center gap-2">
+        <i class="fa-solid fa-feather-pointed text-amber-200"></i> Treo Lời Chúc Lên Cây
       </button>
     </form>
 
@@ -245,7 +262,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
   <script>
-    // --- 1. FIREBASE CONFIG CHÍNH THỨC CỦA BẠN ---
+    // --- 1. FIREBASE CONFIG CỦA BẠN ---
     const firebaseConfig = {
       apiKey: "AIzaSyDgd10BO_PoWYpjhoSAljYOPJ_dJxY26s8",
       authDomain: "graduation-invite-beca9.firebaseapp.com",
@@ -263,7 +280,7 @@
     const db = firebase.database();
     const wishesRef = db.ref('graduation_wishes');
 
-    // --- 2. CÂY LỜI CHÚC TƯƠNG TÁC (CANVAS ENGINE) ---
+    // --- 2. CÂY LỜI CHÚC (CANVAS ENGINE PHONG CÁCH TỐI GIẢN ẤM ÁP) ---
     const canvas = document.getElementById('techTree');
     const ctx = canvas.getContext('2d');
     const tooltip = document.getElementById('tooltip');
@@ -283,11 +300,11 @@
     }
     window.addEventListener('resize', resize);
 
-    // Vẽ cành cây sắc nét, trang nhã
+    // Cành cây thanh mảnh màu nâu đồng ấm
     function drawBranch(startX, startY, len, angle, branchWidth) {
       ctx.beginPath();
       ctx.save();
-      ctx.strokeStyle = "rgba(148, 163, 184, 0.4)";
+      ctx.strokeStyle = "rgba(140, 115, 62, 0.45)";
       ctx.lineWidth = branchWidth;
       ctx.lineCap = "round";
       ctx.translate(startX, startY);
@@ -306,7 +323,7 @@
       ctx.restore();
     }
 
-    // Phân bố lá theo tỉ lệ vàng tự nhiên
+    // Tán lá tỉ lệ vàng
     function calculateNodes() {
       activeNodes.length = 0;
       const w = canvas.parentElement.getBoundingClientRect().width;
@@ -320,7 +337,7 @@
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle) * 0.78;
         
-        activeNodes.push({ x, y, r: 5, data: wish, colorIndex: i % 2 });
+        activeNodes.push({ x, y, r: 5.5, data: wish, colorIndex: i % 2 });
       });
     }
 
@@ -329,16 +346,16 @@
       const h = canvas.parentElement.getBoundingClientRect().height;
       ctx.clearRect(0, 0, w, h);
 
-      // Thân cây
-      drawBranch(w / 2, h - 15, h * 0.28, 0, 7);
+      // Vẽ thân cây
+      drawBranch(w / 2, h - 15, h * 0.28, 0, 6.5);
 
-      // Render từng chiếc lá phát sáng
+      // Render lá (Tone vàng ấm & xanh ngọc botanical hài hòa nền kem)
       activeNodes.forEach(node => {
         const isGold = node.colorIndex === 0;
-        const mainColor = isGold ? "#fbbf24" : "#34d399";
-        const glowColor = isGold ? "rgba(251, 191, 36, 0.3)" : "rgba(52, 211, 153, 0.3)";
+        const mainColor = isGold ? "#bfa15f" : "#059669";
+        const glowColor = isGold ? "rgba(191, 161, 95, 0.25)" : "rgba(5, 150, 105, 0.2)";
 
-        // Quầng sáng
+        // Quầng sáng mềm
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r + 3.5, 0, Math.PI * 2);
         ctx.fillStyle = glowColor;
@@ -349,13 +366,13 @@
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
         ctx.fillStyle = mainColor;
         ctx.shadowColor = mainColor;
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 6;
         ctx.fill();
         ctx.shadowBlur = 0;
       });
     }
 
-    // Tương tác hover / touch mượt mà
+    // Tương tác chạm / hover
     function handlePointer(e) {
       const rect = canvas.getBoundingClientRect();
       const clientX = e.clientX || (e.touches && e.touches[0].clientX);
@@ -427,13 +444,13 @@
           timestamp: Date.now()
         }).then(() => {
           msgInput.value = '';
-          btn.innerHTML = `<i class="fa-solid fa-check"></i> Đã gửi thành công!`;
-          btn.classList.add('bg-emerald-500', 'text-slate-950');
+          btn.innerHTML = `<i class="fa-solid fa-check"></i> Đã gửi lời chúc!`;
+          btn.classList.add('bg-emerald-700');
           
           setTimeout(() => {
             btn.innerHTML = originalText;
             btn.disabled = false;
-            btn.classList.remove('bg-emerald-500', 'text-slate-950');
+            btn.classList.remove('bg-emerald-700');
           }, 1800);
         });
       }
