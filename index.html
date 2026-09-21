@@ -1,61 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Graduation | Nguyễn Thiên Ân</title>
+  <title>Lễ Tốt Nghiệp | Nguyễn Thiên Ân</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Cormorant Garamond (Serif Thiệp Sang Trọng), Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    :root {
-      --bg-color: #050505;
-      --accent: #06b6d4; /* Cyan 500 */
-    }
     body {
-      background-color: var(--bg-color);
-      font-family: 'Inter', sans-serif;
-      color: #a3a3a3;
-      /* Background Grid Pattern */
+      background-color: #06090e;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #cbd5e1;
       background-image: 
-        linear-gradient(to right, #171717 1px, transparent 1px),
-        linear-gradient(to bottom, #171717 1px, transparent 1px);
-      background-size: 32px 32px;
+        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(217, 119, 6, 0.07) 0%, transparent 45%),
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    .font-serif-title {
+      font-family: 'Cormorant Garamond', serif;
     }
     .font-code {
       font-family: 'JetBrains Mono', monospace;
     }
-    
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #262626; border-radius: 2px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-    /* Glassmorphism Floating Tooltip */
+    /* Khung thiệp vật lý cao cấp */
+    .invitation-card {
+      background: linear-gradient(160deg, rgba(17, 24, 39, 0.9) 0%, rgba(7, 12, 22, 0.96) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.08);
+      position: relative;
+    }
+
+    /* Hoa văn viền góc thiệp */
+    .corner-decor {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: #d4af37;
+    }
+    .corner-tl { top: 10px; left: 10px; border-top: 1.5px solid; border-left: 1.5px solid; }
+    .corner-tr { top: 10px; right: 10px; border-top: 1.5px solid; border-right: 1.5px solid; }
+    .corner-bl { bottom: 10px; left: 10px; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+    .corner-br { bottom: 10px; right: 10px; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+
+    /* Tooltip */
     #tooltip {
       position: absolute;
       display: none;
       pointer-events: none;
       z-index: 50;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(6, 182, 212, 0.35);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-      border-radius: 8px;
-      padding: 10px 14px;
-      min-width: 160px;
-      max-width: 260px;
+      background: rgba(10, 15, 26, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 12px 16px;
+      min-width: 170px;
+      max-width: 270px;
       transform: translate(-50%, -125%);
       transition: opacity 0.2s ease, transform 0.2s ease;
       opacity: 0;
@@ -65,159 +79,182 @@
       transform: translate(-50%, -135%);
     }
 
-    /* Minimalist Inputs */
-    .input-minimal {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #27272a;
-      color: #f4f4f5;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
+    /* Custom Input */
+    .wish-input {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
       transition: all 0.25s ease;
     }
-    .input-minimal:focus {
+    .wish-input:focus {
       outline: none;
-      border-bottom-color: var(--accent);
-      box-shadow: 0 1px 0 0 var(--accent);
+      border-color: #34d399;
+      box-shadow: 0 0 12px rgba(52, 211, 153, 0.25);
     }
   </style>
 </head>
 
-<body class="min-h-screen selection:bg-cyan-950 selection:text-cyan-200 flex flex-col md:flex-row">
+<body class="min-h-screen flex flex-col lg:flex-row items-center justify-center p-4 md:p-8 lg:p-12 gap-8 lg:gap-12">
 
-  <!-- ================= CỘT TRÁI: THIỆP MỜI (MINIMALIST TECH JSON) ================= -->
-  <section class="w-full md:w-1/2 p-6 md:p-12 lg:p-16 flex flex-col justify-center min-h-[50vh] md:min-h-screen border-b md:border-b-0 md:border-r border-neutral-800/80 bg-black/70 backdrop-blur-md">
-    <div class="max-w-lg mx-auto w-full">
+  <!-- ================= CỘT 1: THIỆP MỜI TỐT NGHIỆP TRANG TRỌNG ================= -->
+  <div class="w-full lg:w-1/2 max-w-xl">
+    <div class="invitation-card rounded-2xl p-6 sm:p-10 text-center relative overflow-hidden backdrop-blur-xl">
       
-      <!-- Top Window Controls -->
-      <div class="flex items-center justify-between mb-6 pb-3 border-b border-neutral-800">
-        <div class="flex items-center gap-2">
-          <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
-          <span class="ml-2 font-code text-xs text-neutral-500">invitation.json</span>
-        </div>
-        <span class="font-code text-[11px] text-cyan-400/80 border border-cyan-500/20 px-2 py-0.5 rounded bg-cyan-950/20">EVENT::GRADUATION</span>
+      <!-- Họa tiết góc thiệp -->
+      <div class="corner-decor corner-tl"></div>
+      <div class="corner-decor corner-tr"></div>
+      <div class="corner-decor corner-bl"></div>
+      <div class="corner-decor corner-br"></div>
+
+      <!-- Header Thiệp -->
+      <div class="mb-3">
+        <span class="font-code tracking-[0.25em] text-[11px] uppercase text-emerald-400 font-medium">
+          — Official Invitation —
+        </span>
+        <h2 class="text-xs uppercase tracking-widest text-amber-200/90 mt-1 font-semibold">
+          Trân Trọng Kính Mời
+        </h2>
       </div>
 
-      <!-- Candidate Profile ID Card -->
-      <div class="flex items-center gap-4 mb-6 p-3 rounded-lg bg-neutral-900/40 border border-neutral-800">
-        <div class="relative w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-md overflow-hidden border border-cyan-500/30">
+      <!-- Tiêu đề lớn -->
+      <h1 class="font-serif-title text-4xl sm:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-200 to-amber-400 mb-6 drop-shadow-sm">
+        Graduation Ceremony
+      </h1>
+
+      <!-- KHUNG ẢNH CHÂN DUNG LỚN & NỔI BẬT -->
+      <div class="relative w-44 h-56 sm:w-52 sm:h-64 mx-auto mb-6 rounded-2xl p-1.5 bg-gradient-to-b from-amber-300/40 via-emerald-400/25 to-transparent shadow-[0_12px_32px_rgba(0,0,0,0.6)] group">
+        <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/10">
           <img 
             src="./avatar.jpg" 
             alt="Nguyễn Thiên Ân" 
-            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
+            class="w-full h-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
+            onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80'"
           />
-          <div class="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-emerald-400 border border-black" title="Active Status"></div>
-        </div>
-        <div>
-          <div class="font-code text-xs text-cyan-400">// Honoree Profile</div>
-          <h1 class="text-white font-semibold text-base md:text-lg tracking-tight">Nguyễn Thiên Ân</h1>
-          <p class="font-code text-xs text-neutral-400">Tech & Innovation · UEH</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          
+          <span class="absolute bottom-2.5 left-1/2 -translate-x-1/2 font-code text-[10px] tracking-wider px-2.5 py-0.5 rounded-full bg-black/80 border border-amber-300/40 text-amber-200 backdrop-blur-md">
+            CLASS OF 2026
+          </span>
         </div>
       </div>
 
-      <!-- JSON Details Block -->
-      <div class="font-code text-xs md:text-sm leading-relaxed text-neutral-300 bg-neutral-950/60 p-4 rounded-lg border border-neutral-900 shadow-inner">
-        <span class="text-pink-500">{</span>
-        <div class="pl-4 md:pl-6 space-y-1">
-          <div><span class="text-cyan-400">"event"</span>: <span class="text-emerald-400">"Bachelor Graduation Ceremony"</span>,</div>
-          <div><span class="text-cyan-400">"version"</span>: <span class="text-emerald-400">"v1.0.0"</span>,</div>
-          <div><span class="text-cyan-400">"major"</span>: <span class="text-emerald-400">"Technology & Innovation"</span>,</div>
-          <div><span class="text-cyan-400">"schedule"</span>: <span class="text-yellow-400">{</span></div>
-          <div class="pl-4 md:pl-6">
-            <span class="text-cyan-400">"date"</span>: <span class="text-amber-400">"2026-10-15"</span>, <span class="text-neutral-500 italic">// Điền ngày của bạn</span><br/>
-            <span class="text-cyan-400">"time"</span>: <span class="text-amber-400">"08:00 AM"</span>,<br/>
-            <span class="text-cyan-400">"venue"</span>: <span class="text-emerald-400">"Hội trường A - UEH"</span>,<br/>
-            <span class="text-cyan-400">"address"</span>: <span class="text-neutral-400">"59C Nguyễn Đình Chiểu, Q.3, TP.HCM"</span>
+      <!-- Tên Cử nhân & Khoa ngành -->
+      <div class="mb-6">
+        <h3 class="font-serif-title text-2xl sm:text-3xl font-semibold text-white tracking-wide">
+          Nguyễn Thiên Ân
+        </h3>
+        <p class="text-xs sm:text-sm text-emerald-400 font-medium tracking-wide mt-1">
+          Cử nhân Công nghệ & Đổi mới sáng tạo
+        </p>
+        <p class="text-xs text-slate-400">Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)</p>
+      </div>
+
+      <!-- Khung thông tin Lễ tốt nghiệp -->
+      <div class="bg-slate-900/60 rounded-xl p-4 sm:p-5 border border-slate-800 text-left space-y-3 mb-6">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 text-emerald-400 text-sm">
+            <i class="fa-regular fa-clock"></i>
           </div>
-          <div><span class="text-yellow-400">}</span>,</div>
-          <div><span class="text-cyan-400">"status"</span>: <span class="text-purple-400">"Ready for Celebration"</span></div>
+          <div>
+            <div class="text-[11px] font-code uppercase text-slate-400">Thời gian diễn ra</div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-100">08:00 AM — Thứ Bảy, Ngày 15/10/2026</div>
+          </div>
         </div>
-        <span class="text-pink-500">}</span>
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 text-amber-400 text-sm">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <div class="text-[11px] font-code uppercase text-slate-400">Địa điểm tổ chức</div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-100">Hội trường A — Cơ sở A UEH</div>
+            <div class="text-xs text-slate-400">59C Nguyễn Đình Chiểu, Phường Võ Thị Sáu, Quận 3, TP.HCM</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Action Button -->
-      <div class="mt-8 flex gap-4 font-code text-xs">
-        <a 
-          href="https://maps.google.com/?q=59C+Nguyễn+Đình+Chiểu+Quận+3" 
-          target="_blank" 
-          class="px-4 py-2 border border-neutral-700 hover:border-cyan-500 hover:text-cyan-400 text-neutral-300 rounded transition-all duration-300 flex items-center gap-2">
-          <i class="fa-solid fa-location-arrow text-cyan-400"></i> GET /google-maps-direction
-        </a>
-      </div>
+      <!-- Nút định vị Google Maps chuẩn địa điểm Hội trường A UEH 59C -->
+      <a 
+        href="https://www.google.com/maps/dir/?api=1&destination=Trường+Đại+học+Kinh+tế+TP.HCM+-+Cơ+sở+A,+59C+Nguyễn+Đình+Chiểu,+Phường+Võ+Thị+Sáu,+Quận+3,+Hồ+Chí+Minh" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-semibold text-xs transition duration-300 shadow-[0_4px_20px_rgba(16,185,129,0.3)]">
+        <i class="fa-solid fa-diamond-turn-right"></i> Chỉ Đường Đến Hội Trường A (Google Maps)
+      </a>
+
     </div>
-  </section>
+  </div>
 
-  <!-- ================= CỘT PHẢI: CÂY LỜI CHÚC (TECH NODES CANVAS) ================= -->
-  <section class="w-full md:w-1/2 p-6 md:p-12 relative flex flex-col justify-between bg-black/40 backdrop-blur-md min-h-[50vh] md:min-h-screen">
+  <!-- ================= CỘT 2: CÂY LỜI CHÚC TƯƠNG TÁC ================= -->
+  <div class="w-full lg:w-1/2 max-w-xl flex flex-col justify-between h-full bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
     
-    <div class="flex justify-between items-center z-10 mb-2">
-      <h2 class="font-code text-xs md:text-sm text-neutral-300 flex items-center gap-2">
-        <span class="text-cyan-500">const</span> tree = <span class="text-yellow-400">new</span> WishingTree();
-      </h2>
-      <span id="nodeCount" class="font-code text-xs bg-cyan-950/40 text-cyan-400 px-2.5 py-1 rounded border border-cyan-800/40">
-        Nodes: 0
+    <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-seedling text-emerald-400"></i> Cây Lời Chúc (Wishing Tree)
+        </h2>
+        <p class="text-xs text-slate-400 mt-0.5">Chạm vào từng lá để xem lời chúc bạn bè để lại</p>
+      </div>
+      <span id="nodeCount" class="font-code text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full">
+        0 lời chúc
       </span>
     </div>
 
-    <!-- Canvas Visualization Area -->
-    <div class="relative flex-1 w-full min-h-[360px] md:min-h-[420px] flex items-center justify-center">
-      <canvas id="techTree" class="w-full h-full absolute inset-0 cursor-crosshair"></canvas>
+    <!-- Canvas Container -->
+    <div class="relative w-full h-[360px] sm:h-[420px] rounded-xl bg-black/50 border border-slate-800/60 overflow-hidden flex items-center justify-center">
+      <canvas id="techTree" class="w-full h-full cursor-pointer"></canvas>
       
-      <!-- Glassmorphic Tooltip -->
+      <!-- Tooltip xem lời chúc -->
       <div id="tooltip">
-        <div id="tooltipSender" class="font-code text-xs font-semibold text-cyan-400 mb-1 border-b border-neutral-700/60 pb-1"></div>
-        <div id="tooltipMsg" class="text-xs text-neutral-200 mt-1 leading-snug"></div>
+        <div id="tooltipSender" class="font-semibold text-xs text-amber-300 border-b border-slate-700/80 pb-1 flex items-center gap-1.5"></div>
+        <div id="tooltipMsg" class="text-xs text-slate-200 mt-1.5 leading-relaxed"></div>
       </div>
     </div>
 
-    <!-- Minimalist Execution Form -->
-    <form id="wishForm" class="mt-4 z-10 bg-neutral-900/40 p-4 md:p-5 rounded-lg border border-neutral-800/80 backdrop-blur-sm">
-      <div class="flex flex-col gap-3">
+    <!-- Form Gửi Lời Chúc -->
+    <form id="wishForm" class="mt-4 bg-black/40 p-4 rounded-xl border border-slate-800 space-y-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
         <input 
           id="senderInput" 
           type="text" 
-          placeholder="Tên_của_bạn (Sender_Name)" 
+          placeholder="Tên của bạn..." 
           required 
           autocomplete="off"
-          class="input-minimal py-1.5 w-full md:w-1/2"
+          class="wish-input px-3 py-2 rounded-lg text-xs"
         />
-        <div class="flex items-center gap-3">
-          <input 
-            id="msgInput" 
-            type="text" 
-            placeholder="Lời chúc tốt nghiệp của bạn..." 
-            required 
-            autocomplete="off"
-            class="input-minimal py-1.5 flex-1"
-          />
-          <button 
-            type="submit" 
-            class="px-4 py-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/40 hover:bg-cyan-500 hover:text-neutral-950 font-code text-xs font-medium transition-all duration-300 rounded shrink-0">
-            > EXECUTE
-          </button>
-        </div>
+        <input 
+          id="msgInput" 
+          type="text" 
+          placeholder="Gửi lời chúc tốt nghiệp..." 
+          required 
+          autocomplete="off"
+          class="wish-input sm:col-span-2 px-3 py-2 rounded-lg text-xs"
+        />
       </div>
+      <button 
+        type="submit" 
+        class="w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500 text-xs font-semibold tracking-wide transition flex items-center justify-center gap-2">
+        <i class="fa-solid fa-leaf"></i> Treo Lời Chúc Lên Cây
+      </button>
     </form>
-  </section>
+
+  </div>
 
   <!-- Firebase Scripts (v8 compat) -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
   <script>
-    // --- 1. CẤU HÌNH FIREBASE ---
-    // Thay thế thông số bằng cấu hình Project của bạn:
+    // --- 1. FIREBASE CONFIG CHÍNH THỨC CỦA BẠN ---
     const firebaseConfig = {
-  apiKey: "AIzaSyDgd10BO_PoWYpjhoSAljYOPJ_dJxY26s8",
-  authDomain: "graduation-invite-beca9.firebaseapp.com",
-  databaseURL: "https://graduation-invite-beca9-default-rtdb.firebaseio.com",
-  projectId: "graduation-invite-beca9",
-  storageBucket: "graduation-invite-beca9.firebasestorage.app",
-  messagingSenderId: "44266215976",
-  appId: "1:44266215976:web:fd100b422f0d0e0c12731d",
-  measurementId: "G-L1JXV08VE0"
+      apiKey: "AIzaSyDgd10BO_PoWYpjhoSAljYOPJ_dJxY26s8",
+      authDomain: "graduation-invite-beca9.firebaseapp.com",
+      databaseURL: "https://graduation-invite-beca9-default-rtdb.firebaseio.com",
+      projectId: "graduation-invite-beca9",
+      storageBucket: "graduation-invite-beca9.firebasestorage.app",
+      messagingSenderId: "44266215976",
+      appId: "1:44266215976:web:fd100b422f0d0e0c12731d",
+      measurementId: "G-L1JXV08VE0"
     };
 
     if (!firebase.apps.length) {
@@ -226,7 +263,7 @@
     const db = firebase.database();
     const wishesRef = db.ref('graduation_wishes');
 
-    // --- 2. CÂY CÔNG NGHỆ (CANVAS FRACTAL & NODES) ---
+    // --- 2. CÂY LỜI CHÚC TƯƠNG TÁC (CANVAS ENGINE) ---
     const canvas = document.getElementById('techTree');
     const ctx = canvas.getContext('2d');
     const tooltip = document.getElementById('tooltip');
@@ -246,50 +283,44 @@
     }
     window.addEventListener('resize', resize);
 
-    // Vẽ cành cây nét đứt kỹ thuật (Minimalist Tech Branches)
-    function drawTechBranch(startX, startY, len, angle, depth) {
+    // Vẽ cành cây sắc nét, trang nhã
+    function drawBranch(startX, startY, len, angle, branchWidth) {
       ctx.beginPath();
       ctx.save();
-      
-      if (depth < 3) {
-        ctx.setLineDash([3, 5]); 
-      } else {
-        ctx.setLineDash([]);
-      }
-
-      ctx.strokeStyle = "rgba(115, 115, 115, 0.4)";
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.4)";
+      ctx.lineWidth = branchWidth;
+      ctx.lineCap = "round";
       ctx.translate(startX, startY);
       ctx.rotate((angle * Math.PI) / 180);
       ctx.moveTo(0, 0);
       ctx.lineTo(0, -len);
       ctx.stroke();
 
-      if (len < 24) {
+      if (len < 18) {
         ctx.restore();
         return;
       }
 
-      drawTechBranch(0, -len, len * 0.76, angle - 24, depth + 1);
-      drawTechBranch(0, -len, len * 0.76, angle + 24, depth + 1);
+      drawBranch(0, -len, len * 0.76, angle - 23, branchWidth * 0.7);
+      drawBranch(0, -len, len * 0.76, angle + 23, branchWidth * 0.7);
       ctx.restore();
     }
 
-    // Tính toán tọa độ phân bổ các Node lời chúc theo tỉ lệ vàng
+    // Phân bố lá theo tỉ lệ vàng tự nhiên
     function calculateNodes() {
       activeNodes.length = 0;
       const w = canvas.parentElement.getBoundingClientRect().width;
       const h = canvas.parentElement.getBoundingClientRect().height;
       const centerX = w / 2;
-      const centerY = h * 0.44;
+      const centerY = h * 0.42;
 
       wishes.forEach((wish, i) => {
         const angle = (i * 137.5) * (Math.PI / 180); 
-        const radius = Math.min(w, h) * 0.38 * Math.sqrt((i + 1) / (wishes.length + 3));
+        const radius = Math.min(w, h) * 0.38 * Math.sqrt((i + 1) / (wishes.length + 4));
         const x = centerX + radius * Math.cos(angle);
         const y = centerY + radius * Math.sin(angle) * 0.78;
         
-        activeNodes.push({ x, y, r: 4.5, data: wish });
+        activeNodes.push({ x, y, r: 5, data: wish, colorIndex: i % 2 });
       });
     }
 
@@ -298,29 +329,33 @@
       const h = canvas.parentElement.getBoundingClientRect().height;
       ctx.clearRect(0, 0, w, h);
 
-      // Thân và nhánh cây
-      drawTechBranch(w / 2, h - 16, h * 0.28, 0, 0);
+      // Thân cây
+      drawBranch(w / 2, h - 15, h * 0.28, 0, 7);
 
-      // Render từng Node lời chúc phát sáng
+      // Render từng chiếc lá phát sáng
       activeNodes.forEach(node => {
+        const isGold = node.colorIndex === 0;
+        const mainColor = isGold ? "#fbbf24" : "#34d399";
+        const glowColor = isGold ? "rgba(251, 191, 36, 0.3)" : "rgba(52, 211, 153, 0.3)";
+
         // Quầng sáng
         ctx.beginPath();
-        ctx.arc(node.x, node.y, node.r + 3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(6, 182, 212, 0.18)";
+        ctx.arc(node.x, node.y, node.r + 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = glowColor;
         ctx.fill();
 
-        // Điểm sáng trung tâm
+        // Lõi lá
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#22d3ee";
-        ctx.shadowColor = "#06b6d4";
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = mainColor;
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
       });
     }
 
-    // Xử lý tương tác xem lời chúc (Touch & Mouse)
+    // Tương tác hover / touch mượt mà
     function handlePointer(e) {
       const rect = canvas.getBoundingClientRect();
       const clientX = e.clientX || (e.touches && e.touches[0].clientX);
@@ -334,7 +369,7 @@
       for (const node of activeNodes) {
         const dx = node.x - mouseX;
         const dy = node.y - mouseY;
-        if (Math.sqrt(dx * dx + dy * dy) <= node.r + 12) {
+        if (Math.sqrt(dx * dx + dy * dy) <= node.r + 14) {
           hovered = node;
           break;
         }
@@ -342,7 +377,7 @@
 
       if (hovered) {
         canvas.style.cursor = 'pointer';
-        tooltipSender.textContent = `// ${hovered.data.name}`;
+        tooltipSender.innerHTML = `<i class="fa-regular fa-envelope"></i> ${hovered.data.name}`;
         tooltipMsg.textContent = hovered.data.message;
         
         tooltip.style.display = 'block';
@@ -351,7 +386,7 @@
         tooltip.style.left = `${mouseX}px`;
         tooltip.style.top = `${mouseY}px`;
       } else {
-        canvas.style.cursor = 'crosshair';
+        canvas.style.cursor = 'default';
         tooltip.classList.remove('show');
         setTimeout(() => {
           if (!tooltip.classList.contains('show')) tooltip.style.display = 'none';
@@ -362,18 +397,19 @@
     canvas.addEventListener('mousemove', handlePointer);
     canvas.addEventListener('touchstart', handlePointer);
 
-    // --- 3. ĐỒNG BỘ REALTIME & XỬ LÝ FORM ---
+    // Đồng bộ thời gian thực từ Firebase
     wishesRef.on('value', (snapshot) => {
       wishes = [];
       const val = snapshot.val();
       if (val) {
         Object.keys(val).forEach(k => wishes.push(val[k]));
       }
-      nodeCountEl.textContent = `Nodes: ${wishes.length}`;
+      nodeCountEl.textContent = `${wishes.length} lời chúc`;
       calculateNodes();
       draw();
     });
 
+    // Form gửi lời chúc
     document.getElementById('wishForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const senderInput = document.getElementById('senderInput');
@@ -382,7 +418,7 @@
 
       if (senderInput.value.trim() && msgInput.value.trim()) {
         const originalText = btn.innerHTML;
-        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> PUSHING...`;
+        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...`;
         btn.disabled = true;
 
         wishesRef.push({
@@ -391,13 +427,13 @@
           timestamp: Date.now()
         }).then(() => {
           msgInput.value = '';
-          btn.innerHTML = `<i class="fa-solid fa-check"></i> SUCCESS`;
-          btn.classList.add('bg-emerald-500', 'text-black', 'border-emerald-500');
+          btn.innerHTML = `<i class="fa-solid fa-check"></i> Đã gửi thành công!`;
+          btn.classList.add('bg-emerald-500', 'text-slate-950');
           
           setTimeout(() => {
             btn.innerHTML = originalText;
             btn.disabled = false;
-            btn.classList.remove('bg-emerald-500', 'text-black', 'border-emerald-500');
+            btn.classList.remove('bg-emerald-500', 'text-slate-950');
           }, 1800);
         });
       }
@@ -406,4 +442,4 @@
     setTimeout(resize, 100);
   </script>
 </body>
-</html>  
+</html>
