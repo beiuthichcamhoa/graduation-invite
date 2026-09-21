@@ -113,207 +113,229 @@
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col lg:flex-row items-center justify-center p-4 md:p-8 lg:p-12 gap-8 lg:gap-12">
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 flex justify-center">
 
-  <!-- ================= CỘT 1: THIỆP MỜI SANG TRỌNG NỀN VÀNG KEM ================= -->
-  <div class="w-full lg:w-1/2 max-w-xl">
-    <div class="cream-card rounded-2xl p-6 sm:p-10 text-center relative">
-      
-      <!-- Họa tiết 4 góc -->
-      <div class="corner-decor corner-tl"></div>
-      <div class="corner-decor corner-tr"></div>
-      <div class="corner-decor corner-bl"></div>
-      <div class="corner-decor corner-br"></div>
+  <div class="max-w-6xl w-full flex flex-col gap-6">
 
-      <!-- Lời mở đầu -->
-      <div class="mb-3">
-        <span class="tracking-[0.3em] text-[11px] uppercase text-[#8c733e] font-semibold">
-          — Graduation Invitation —
-        </span>
-        <p class="text-xs uppercase tracking-[0.2em] text-[#a89260] mt-1 font-medium">
-          Trân trọng kính mời
-        </p>
-      </div>
+    <!-- HÀNG 1: THIỆP MỜI VÀ CÂY LỜI CHÚC (CÂN BẰNG NGANG NHAU) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
 
-      <!-- Tiêu đề Thiệp -->
-      <h1 class="font-serif-title text-3xl sm:text-5xl font-bold tracking-wide text-[#3a2e1d] mb-5">
-        Lễ Tốt Nghiệp
-      </h1>
+      <!-- ================= CỘT 1: THIỆP MỜI ================= -->
+      <div class="cream-card rounded-2xl p-6 sm:p-8 text-center flex flex-col justify-between h-full">
+        <!-- Họa tiết 4 góc -->
+        <div class="corner-decor corner-tl"></div>
+        <div class="corner-decor corner-tr"></div>
+        <div class="corner-decor corner-bl"></div>
+        <div class="corner-decor corner-br"></div>
 
-      <!-- KHUNG ẢNH CHÂN DUNG LỚN & THANH LỊCH -->
-      <div class="relative w-44 h-56 sm:w-52 sm:h-64 mx-auto mb-6 rounded-2xl p-1.5 bg-gradient-to-b from-[#e8d7ab] to-[#c7af76] shadow-[0_12px_30px_rgba(140,115,62,0.18)] group">
-        <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/60 bg-white">
-          <img 
-            src="./avatar.jpg" 
-            alt="Nguyễn Thiên Ân" 
-            class="w-full h-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
-            onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80'"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/30 via-transparent to-transparent"></div>
-          
-          <span class="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-[10px] tracking-widest px-3 py-0.5 rounded-full bg-stone-900/80 border border-amber-200/40 text-[#fbf7ee] backdrop-blur-sm">
-            CLASS OF 2026
-          </span>
+        <div>
+          <!-- Lời mở đầu -->
+          <div class="mb-2">
+            <span class="tracking-[0.25em] text-[10px] sm:text-[11px] uppercase text-[#8c733e] font-semibold">
+              — Graduation Invitation —
+            </span>
+            <p class="text-xs uppercase tracking-[0.2em] text-[#a89260] mt-0.5 font-medium">
+              Trân trọng kính mời
+            </p>
+          </div>
+
+          <!-- Tiêu đề Thiệp -->
+          <h1 class="font-serif-title text-3xl sm:text-4xl font-bold tracking-wide text-[#3a2e1d] mb-4">
+            Lễ Tốt Nghiệp
+          </h1>
+
+          <!-- KHUNG ẢNH CHÂN DUNG -->
+          <div class="relative w-40 h-52 sm:w-44 sm:h-56 mx-auto mb-4 rounded-2xl p-1.5 bg-gradient-to-b from-[#e8d7ab] to-[#c7af76] shadow-[0_12px_28px_rgba(140,115,62,0.18)] group">
+            <div class="w-full h-full rounded-xl overflow-hidden relative border border-white/80 bg-white">
+              <img 
+                src="./avatar.jpg" 
+                alt="Nguyễn Thiên Ân" 
+                class="w-full h-full object-cover object-top transition duration-700 ease-out group-hover:scale-105"
+                onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-900/30 via-transparent to-transparent"></div>
+              
+              <span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[9px] tracking-widest px-2.5 py-0.5 rounded-full bg-stone-900/80 border border-amber-200/40 text-[#fbf7ee] backdrop-blur-sm">
+                CLASS OF 2026
+              </span>
+            </div>
+          </div>
+
+          <!-- Tên Cử nhân cách điệu -->
+          <div class="mb-4">
+            <p class="font-script text-3xl sm:text-4xl text-[#8c733e] leading-none mb-1">
+              Nguyễn Thiên Ân
+            </p>
+            <p class="text-xs sm:text-sm font-semibold tracking-wider text-stone-700 uppercase mt-1">
+              Cử nhân Công nghệ & Đổi mới sáng tạo
+            </p>
+            <p class="text-xs text-stone-500 font-light mt-0.5 tracking-wide">
+              Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)
+            </p>
+          </div>
+
+          <!-- Khung thông tin Thời gian & Địa điểm -->
+          <div class="bg-[#f7f2e7] rounded-xl p-3.5 sm:p-4 border border-[#e8ddc8] text-left space-y-2.5 mb-4 shadow-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-xs mt-0.5">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Thời gian tổ chức</div>
+                <div class="text-xs sm:text-sm font-semibold text-stone-800">04:30 PM — Thứ Bảy, Ngày 3/10/2026</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-xs mt-0.5">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Địa điểm diễn ra</div>
+                <div class="text-xs sm:text-sm font-semibold text-stone-800">Hội trường A — Cơ sở A UEH</div>
+                <div class="text-[11px] text-stone-600 font-light">59C Nguyễn Đình Chiểu, Phường Võ Thị Sáu, Quận 3, TP.HCM</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Nút Google Maps -->
+        <a 
+          href="https://www.google.com/maps/dir/?api=1&destination=Trường+Đại+học+Kinh+tế+TP.HCM+-+Cơ+sở+A,+59C+Nguyễn+Đình+Chiểu,+Phường+Võ+Thị+Sáu,+Quận+3,+Hồ+Chí+Minh" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full py-2.5 rounded-full bg-[#8c733e] hover:bg-[#735e31] text-white font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+          <i class="fa-solid fa-diamond-turn-right text-amber-200"></i> Chỉ Đường Đến Hội Trường A (Google Maps)
+        </a>
       </div>
 
-      <!-- Tên Cử nhân cách điệu -->
-      <div class="mb-6">
-        <p class="font-script text-4xl sm:text-5xl text-[#8c733e] leading-none mb-1">
-          Nguyễn Thiên Ân
-        </p>
-        <p class="text-xs sm:text-sm font-semibold tracking-wider text-stone-700 uppercase mt-2">
-          Cử nhân Công nghệ & Đổi mới sáng tạo
-        </p>
-        <p class="text-xs text-stone-500 font-light mt-0.5 tracking-wide">
-          Trường Đại học Kinh tế TP. Hồ Chí Minh (UEH)
-        </p>
-      </div>
-
-      <!-- Khung thông tin Thời gian & Địa điểm -->
-      <div class="bg-[#f7f2e7] rounded-xl p-4 sm:p-5 border border-[#e8ddc8] text-left space-y-3.5 mb-4 shadow-sm">
-        <div class="flex items-start gap-3.5">
-          <div class="w-8 h-8 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-sm">
-            <i class="fa-regular fa-clock"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Thời gian tổ chức</div>
-            <div class="text-xs sm:text-sm font-semibold text-stone-800">04:30 PM — Thứ Bảy, Ngày 3/10/2026</div>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3.5">
-          <div class="w-8 h-8 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-sm">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Địa điểm diễn ra</div>
-            <div class="text-xs sm:text-sm font-semibold text-stone-800">Hội trường A — Cơ sở A UEH</div>
-            <div class="text-xs text-stone-600 font-light">59C Nguyễn Đình Chiểu, Phường Võ Thị Sáu, Quận 3, TP.HCM</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- KHUNG BỔ SUNG: SỐ ĐIỆN THOẠI & GỢI Ý CHỖ GỬI XE CHUẨN UEH -->
-      <div class="bg-[#f4eee1] rounded-xl p-4 border border-[#e2d4bc] text-left space-y-3 mb-6">
+      <!-- ================= CỘT 2: CÂY LỜI CHÚC (ĐƯỢC KÉO CAO BẰNG THIỆP) ================= -->
+      <div class="w-full flex flex-col justify-between h-full bg-[#fffdfa] border border-[#ebdcb9] rounded-2xl p-6 sm:p-8 shadow-[0_15px_35px_rgba(140,115,62,0.08)]">
         
-        <!-- Số điện thoại liên hệ -->
-        <div class="flex items-center justify-between pb-2.5 border-b border-[#e2d4bc]/80">
-          <div class="flex items-center gap-2.5">
-            <div class="w-7 h-7 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-xs">
-              <i class="fa-solid fa-phone"></i>
-            </div>
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-[#ebdcb9]/60 pb-3">
             <div>
-              <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Liên hệ khi đến</div>
-              <div class="text-xs font-semibold text-stone-800">0334 493 025 (Ân)</div>
+              <h2 class="font-serif-title text-lg sm:text-xl font-semibold text-stone-800 flex items-center gap-2">
+                <i class="fa-solid fa-leaf text-[#8c733e]"></i> Cây Lời Chúc
+              </h2>
+              <p class="text-xs text-stone-500 font-light mt-1 leading-relaxed">
+                Cốc cốc cốc, Chạm vào từng chiếc lá để đọc những lời chúc gửi đến Ân<br/>
+                <span class="italic text-stone-400">[Mở cửa cho Ân đê]</span>
+              </p>
             </div>
+            <span id="nodeCount" class="text-xs font-medium bg-[#f5eddc] text-[#8c733e] border border-[#e2d0ab] px-3 py-1 rounded-full shrink-0">
+              0 lời chúc
+            </span>
           </div>
-          <a href="tel:0334493025" class="px-3 py-1 rounded-full bg-[#8c733e]/15 hover:bg-[#8c733e] text-[#8c733e] hover:text-white border border-[#8c733e]/30 text-[11px] font-medium transition flex items-center gap-1.5">
-            <i class="fa-solid fa-phone-flip text-[10px]"></i> Gọi ngay
-          </a>
-        </div>
 
-        <!-- 4 BÃI GỬI XE CHÍNH XÁC -->
-        <div class="flex items-start gap-2.5 pt-0.5">
-          <div class="w-7 h-7 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-xs mt-0.5">
-            <i class="fa-solid fa-square-parking"></i>
-          </div>
-          <div class="text-xs leading-relaxed text-stone-700 w-full">
-            <span class="font-semibold text-stone-800 text-[11px] uppercase tracking-wider"> 4 điểm gửi xe gần trường nhé:</span>
-            <div class="grid grid-cols-1 gap-1.5 mt-1.5 text-[11px] text-stone-600">
-              <div class="p-1.5 rounded bg-white/60 border border-[#e2d4bc]/60">
-                <b class="text-stone-800">1. Bãi xe UEH Cơ sở A:</b> 59C Nguyễn Đình Chiểu <i>(khó:))), dễ đầy chỗ)</i>
-              </div>
-              <div class="p-1.5 rounded bg-white/60 border border-[#e2d4bc]/60">
-                <b class="text-stone-800">2. Trụ sở cơ quan đối diện Hồ Con Rùa:</b> Hướng đường Phạm Ngọc Thạch <i>(cách ~150m, cân nhắc nếu bạn đến sớm nhée)</i>
-              </div>
-              <div class="p-1.5 rounded bg-white/60 border border-[#e2d4bc]/60">
-                <b class="text-stone-800">3. Nhà Văn hóa Thanh Niên:</b> Số 4 Phạm Ngọc Thạch hoặc 33 Nguyễn Thị Minh Khai <i>(rất rộng, đậu cả ô tô, nhma chịu khó đi bộ xíu nhenn)</i>
-              </div>
-              <div class="p-1.5 rounded bg-white/60 border border-[#e2d4bc]/60">
-                <b class="text-stone-800">4. Co.opmart Nguyễn Đình Chiểu:</b> 168 Nguyễn Đình Chiểu, P. Võ Thị Sáu( Ưu điểm: Siêu thị mát)
-              </div>
+          <!-- Canvas Cây mở rộng chiều cao cân xứng -->
+          <div class="relative w-full h-[360px] sm:h-[400px] rounded-xl bg-[#faf6ee] border border-[#ebdcb9] overflow-hidden flex items-center justify-center">
+            <canvas id="techTree" class="w-full h-full cursor-pointer"></canvas>
+            
+            <!-- Tooltip xem lời chúc -->
+            <div id="tooltip">
+              <div id="tooltipSender" class="font-semibold text-xs text-[#8c733e] border-b border-[#e8ddc8] pb-1 flex items-center gap-1.5"></div>
+              <div id="tooltipMsg" class="text-xs text-stone-700 mt-1.5 leading-relaxed font-light"></div>
             </div>
           </div>
         </div>
 
+        <!-- Form Gửi Lời Chúc -->
+        <form id="wishForm" class="mt-4 bg-[#fbf7ef] p-3.5 sm:p-4 rounded-xl border border-[#ebdcb9] space-y-2.5">
+          <div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <input 
+                id="senderInput" 
+                type="text" 
+                placeholder="Tên / Nickname..." 
+                required 
+                autocomplete="off"
+                class="cream-input px-3 py-2 rounded-lg text-xs"
+              />
+              <input 
+                id="msgInput" 
+                type="text" 
+                placeholder="Gửi lời chúc tốt nghiệp..." 
+                required 
+                autocomplete="off"
+                class="cream-input sm:col-span-2 px-3 py-2 rounded-lg text-xs"
+              />
+            </div>
+            <p class="text-[11px] text-stone-500 font-light italic mt-1.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-[#8c733e]/70 text-[10px]"></i>
+              Mỗi lời chúc sẽ được hiển thị công khai trên cây — bạn cứ thoải mái dùng nickname thân quen cho gần gũi nhé!
+            </p>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-2.5 rounded-lg bg-[#8c733e] hover:bg-[#735e31] text-white text-xs font-medium tracking-wide uppercase transition shadow-sm hover:shadow flex items-center justify-center gap-2">
+            <i class="fa-solid fa-feather-pointed text-amber-200"></i> Treo Lời Chúc Lên Cây
+          </button>
+        </form>
+
       </div>
 
-      <!-- Nút Google Maps -->
-      <a 
-        href="https://www.google.com/maps/dir/?api=1&destination=Trường+Đại+học+Kinh+tế+TP.HCM+-+Cơ+sở+A,+59C+Nguyễn+Đình+Chiểu,+Phường+Võ+Thị+Sáu,+Quận+3,+Hồ+Chí+Minh" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#8c733e] hover:bg-[#735e31] text-white font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg">
-        <i class="fa-solid fa-diamond-turn-right text-amber-200"></i> Chỉ Đường Đến Hội Trường A (Google Maps)
-      </a>
-
-    </div>
-  </div>
-
-  <!-- ================= CỘT 2: CÂY LỜI CHÚC TƯƠNG TÁC (BOTANICAL CHIC) ================= -->
-  <div class="w-full lg:w-1/2 max-w-xl flex flex-col justify-between h-full bg-[#fffdfa] border border-[#ebdcb9] rounded-2xl p-6 sm:p-8 shadow-[0_15px_35px_rgba(140,115,62,0.08)]">
-    
-    <div class="flex items-center justify-between mb-4 border-b border-[#ebdcb9]/60 pb-3">
-      <div>
-        <h2 class="font-serif-title text-lg sm:text-xl font-semibold text-stone-800 flex items-center gap-2">
-          <i class="fa-solid fa-leaf text-[#8c733e]"></i> Cây Lời Chúc
-        </h2>
-        <p class="text-xs text-stone-500 font-light mt-1 leading-relaxed">
-          Cốc cốc cốc, Chạm vào từng chiếc lá để đọc những lời chúc gửi đến Ân<br/>
-          <span class="italic text-stone-400">[Mở cửa cho Ân đê]</span>
-        </p>
-      </div>
-      <span id="nodeCount" class="text-xs font-medium bg-[#f5eddc] text-[#8c733e] border border-[#e2d0ab] px-3 py-1 rounded-full">
-        0 lời chúc
-      </span>
     </div>
 
-    <!-- Canvas Cây -->
-    <div class="relative w-full h-[360px] sm:h-[420px] rounded-xl bg-[#faf6ee] border border-[#ebdcb9] overflow-hidden flex items-center justify-center">
-      <canvas id="techTree" class="w-full h-full cursor-pointer"></canvas>
-      
-      <!-- Tooltip xem lời chúc -->
-      <div id="tooltip">
-        <div id="tooltipSender" class="font-semibold text-xs text-[#8c733e] border-b border-[#e8ddc8] pb-1 flex items-center gap-1.5"></div>
-        <div id="tooltipMsg" class="text-xs text-stone-700 mt-1.5 leading-relaxed font-light"></div>
-      </div>
-    </div>
-
-    <!-- Form Gửi Lời Chúc -->
-    <form id="wishForm" class="mt-4 bg-[#fbf7ef] p-4 rounded-xl border border-[#ebdcb9] space-y-3">
-      <div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <input 
-            id="senderInput" 
-            type="text" 
-            placeholder="Tên / Nickname..." 
-            required 
-            autocomplete="off"
-            class="cream-input px-3 py-2 rounded-lg text-xs"
-          />
-          <input 
-            id="msgInput" 
-            type="text" 
-            placeholder="Gửi lời chúc tốt nghiệp..." 
-            required 
-            autocomplete="off"
-            class="cream-input sm:col-span-2 px-3 py-2 rounded-lg text-xs"
-          />
+    <!-- HÀNG 2: KHUNG LIÊN HỆ & CHỖ GỬI XE TÁCH RIÊNG TRẢI DÀI BÊN DƯỚI -->
+    <div class="w-full bg-[#f4eee1] rounded-2xl p-5 sm:p-6 border border-[#e2d4bc] shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+        
+        <!-- Cột nhỏ: Số điện thoại Hotline -->
+        <div class="lg:border-r lg:border-[#e2d4bc] lg:pr-6 flex flex-col justify-center">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-sm">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-wider text-stone-500 font-semibold">Liên hệ khi đến</div>
+                <div class="text-sm font-bold text-stone-800">0334 493 025 (Ân)</div>
+              </div>
+            </div>
+            <a href="tel:0334493025" class="px-3.5 py-1.5 rounded-full bg-[#8c733e]/15 hover:bg-[#8c733e] text-[#8c733e] hover:text-white border border-[#8c733e]/30 text-xs font-medium transition flex items-center gap-1.5 shadow-sm">
+              <i class="fa-solid fa-phone-flip text-[10px]"></i> Gọi ngay
+            </a>
+          </div>
+          <p class="text-[11px] text-stone-500 font-light mt-2 italic">
+            Nếu đến nơi tìm không thấy vị trí của Ân, bạn cứ bấm nút gọi trực tiếp nhé!
+          </p>
         </div>
-        <!-- DÒNG NOTE GỢI Ý NICKNAME & CÔNG KHAI -->
-        <p class="text-[11px] text-stone-500 font-light italic mt-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-circle-info text-[#8c733e]/70 text-[10px]"></i>
-          Mỗi lời chúc sẽ được hiển thị công khai trên cây — mina cứ thoải mái dùng nickname thân quen cho gần gũi nhé!
-        </p>
-      </div>
 
-      <button 
-        type="submit" 
-        class="w-full py-2.5 rounded-lg bg-[#8c733e] hover:bg-[#735e31] text-white text-xs font-medium tracking-wide uppercase transition shadow-sm hover:shadow flex items-center justify-center gap-2">
-        <i class="fa-solid fa-feather-pointed text-amber-200"></i> Treo Lời Chúc Lên Cây
-      </button>
-    </form>
+        <!-- Cột lớn: 4 Bãi gửi xe gần trường -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-6 h-6 rounded-full bg-[#ebdcb9] flex items-center justify-center shrink-0 text-[#8c733e] text-xs">
+              <i class="fa-solid fa-square-parking"></i>
+            </div>
+            <span class="font-semibold text-stone-800 text-xs uppercase tracking-wider">
+              Gợi ý 4 điểm gửi xe gần trường UEH Cơ sở A:
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="p-2 rounded-lg bg-white/70 border border-[#e2d4bc]/70">
+              <b class="text-stone-800">1. Bãi xe UEH Cơ sở A:</b> 
+              <p class="text-[11px] text-stone-600 mt-0.5">59C Nguyễn Đình Chiểu <i class="text-amber-800">(ưu tiên, dễ đầy chỗ)</i></p>
+            </div>
+            <div class="p-2 rounded-lg bg-white/70 border border-[#e2d4bc]/70">
+              <b class="text-stone-800">2. Cơ quan đối diện Hồ Con Rùa:</b> 
+              <p class="text-[11px] text-stone-600 mt-0.5">Đường Phạm Ngọc Thạch <i class="text-stone-500">(cách trường ~150m)</i></p>
+            </div>
+            <div class="p-2 rounded-lg bg-white/70 border border-[#e2d4bc]/70">
+              <b class="text-stone-800">3. Nhà Văn hóa Thanh Niên:</b> 
+              <p class="text-[11px] text-stone-600 mt-0.5">Số 4 Phạm Ngọc Thạch hoặc 33 NTMK <i class="text-emerald-800">(rất rộng, có bãi ô tô)</i></p>
+            </div>
+            <div class="p-2 rounded-lg bg-white/70 border border-[#e2d4bc]/70">
+              <b class="text-stone-800">4. Co.opmart Nguyễn Đình Chiểu:</b> 
+              <p class="text-[11px] text-stone-600 mt-0.5">168 Nguyễn Đình Chiểu, P. Võ Thị Sáu</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 
@@ -322,7 +344,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
   <script>
-    // --- 1. FIREBASE CONFIG CỦA BẠN ---
+    // --- 1. FIREBASE CONFIG CHÍNH THỨC CỦA BẠN ---
     const firebaseConfig = {
       apiKey: "AIzaSyDgd10BO_PoWYpjhoSAljYOPJ_dJxY26s8",
       authDomain: "graduation-invite-beca9.firebaseapp.com",
@@ -340,7 +362,7 @@
     const db = firebase.database();
     const wishesRef = db.ref('graduation_wishes');
 
-    // --- 2. CÂY LỜI CHÚC (CANVAS ENGINE PHONG CÁCH TỐI GIẢN ẤM ÁP) ---
+    // --- 2. CÂY LỜI CHÚC (CANVAS ENGINE) ---
     const canvas = document.getElementById('techTree');
     const ctx = canvas.getContext('2d');
     const tooltip = document.getElementById('tooltip');
@@ -360,7 +382,6 @@
     }
     window.addEventListener('resize', resize);
 
-    // Cành cây thanh mảnh màu nâu đồng ấm
     function drawBranch(startX, startY, len, angle, branchWidth) {
       ctx.beginPath();
       ctx.save();
@@ -383,7 +404,6 @@
       ctx.restore();
     }
 
-    // Tán lá tỉ lệ vàng
     function calculateNodes() {
       activeNodes.length = 0;
       const w = canvas.parentElement.getBoundingClientRect().width;
